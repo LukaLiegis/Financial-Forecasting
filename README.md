@@ -2,7 +2,7 @@
 
 LinearRegression is a python notebook that uses sklearn to predict financial prices, and it also has a backtest that feels sketchy.
 
-The idea is the same as ... 
+The idea is the same as ... but I believe that using a WGAN or even just an LSTM is too complex and too prone to overfitting for what should be done with daily stock data as there is so little data points.
 
 While it does predict the future price of the asset, the point of it is to look at it as a 
 
