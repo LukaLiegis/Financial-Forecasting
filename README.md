@@ -6,6 +6,19 @@ The idea is the same as ...
 
 While it does predict the future price of the asset, the point of it is to look at it as a 
 
+```python
+def get_technicals(dataset):
+    # Moving averages
+    dataset['S_3'] = dataset['Close'].rolling(window=3).mean()
+    dataset['S_9'] = dataset['Close'].rolling(window=9).mean()
+    # Gaussian Filter for denoising
+    dataset["GF1"] = gaussian_filter((dataset["Close"]), sigma=1)
+    # Drop Nan values
+    dataset = dataset.dropna()
+    
+    return dataset
+```
+
 Fitting the linear model to train data.
 ```python
 linear = LinearRegression()
