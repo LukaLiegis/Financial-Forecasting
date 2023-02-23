@@ -6,6 +6,19 @@ The idea is the same as ... but I believe that using a WGAN or even just an LSTM
 
 While it does predict the future price of the asset, the point of it is to look at it as a 
 
+Importing libraries
+```python
+# pandas and numpy are used for data manipulation
+import pandas as pd
+import numpy as np
+# matplotlib and seaborn are used for plotting graphs
+import matplotlib.pyplot as plt
+# yahoo finance is used to fetch data
+import yfinance as yf
+# For calculating gaussian filter
+from scipy.ndimage import gaussian_filter
+```
+
 ```python
 def get_technicals(dataset):
     # Moving averages
@@ -23,6 +36,11 @@ Fitting the linear model to train data.
 ```python
 linear = LinearRegression()
 linear = linear.fit(X_train, y_train)
+```
+
+The other positive of a linear model is that we can actually see the model:
+```python
+linear.coef_
 ```
 
 ## To do:
