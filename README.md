@@ -19,6 +19,7 @@ import yfinance as yf
 from scipy.ndimage import gaussian_filter
 ```
 
+Technical indicators and denoising
 ```python
 def get_technicals(dataset):
     # Moving averages
