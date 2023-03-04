@@ -6,6 +6,8 @@ The idea is the same as ... but I believe that using a WGAN or even just an LSTM
 
 While it does predict the future price of the asset, the point of it is to look at it as a 
 
+Finally, as an homage to the original stockpredictionai notebook, this writeup will be done by predicting Goldman Sachs stock.
+
 Importing libraries
 ```python
 # pandas and numpy are used for data manipulation
@@ -17,6 +19,11 @@ import matplotlib.pyplot as plt
 import yfinance as yf
 # For calculating gaussian filter
 from scipy.ndimage import gaussian_filter
+```
+
+```python
+df = yf.download("GS", '2000-01-01', '2022-6-01', auto_adjust=True)
+
 ```
 
 Technical indicators and denoising
