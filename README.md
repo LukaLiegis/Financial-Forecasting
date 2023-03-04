@@ -26,7 +26,9 @@ df = yf.download("GS", '2000-01-01', '2022-6-01', auto_adjust=True)
 
 ```
 
-Technical indicators and denoising
+## Technical Indicators and Denoising
+
+I will not be adding any stochastic indicators such as RSI, MACD or even Z-Score as they mess with the output of the model.
 ```python
 def get_technicals(dataset):
     # Moving averages
@@ -40,10 +42,16 @@ def get_technicals(dataset):
     return dataset
 ```
 
+## Linear Model
 Fitting the linear model to train data.
+
+I also tried adding linear models such as lasso and elastic but even they are too complicated for the dataset that I have.
 ```python
-linear = LinearRegression()
+linear_reg = LinearRegression()
+ridge = Ridge()
+linear = VotingRegressor(estimators=[('lr', linear_reg), ('rdg', ridge)])
 linear = linear.fit(X_train, y_train)
+
 ```
 
 The other positive of a linear model is that we can actually see the model:
